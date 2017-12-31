@@ -127,7 +127,14 @@
             - up-to-date knowledge
     - Influence between Architecture and context
 
---------------
+- How is Architecture Influenced?  --(with four context/environment)
+    - Requirements
+    - That is a result of business&social influences, as well as technical ones
+    - The existence of an architecture in turn affects the technical, business, and social environments that subsequently influence future architectures
+    - Each contect plays a role in influencing an architect&the architecture
+
+- ABC(refer to the contect above)
+    --------------
 #### Chapter 4
 - Sys requirements
     - Functional requirements - not determine Architecture
@@ -1319,7 +1326,7 @@ Dict
 
 ##### Appendix 来自林连南的笑声
 
-    此为录音人肉翻译，有误免责声明，爱看不看
+    此为录音人肉翻译，有错不负责
     
 Chap3 架构 influencecycle;arhictecture influence what,
 

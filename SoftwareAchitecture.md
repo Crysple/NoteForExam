@@ -6,10 +6,10 @@
 
 ---
 
-##Summary
+## Summary
 
 ---------------
-####Chapter 1
+#### Chapter 1
 - SA (Software Architecture)
     - The SA of (a program or computing system)  理解
         - **structure or structures** of the system (*comprises*)
@@ -86,7 +86,7 @@
     - 允许资源争用，但应给出资源争用的解决方案
             
 ------------
-####Chapter 2
+#### Chapter 2
 - Importance of SA *理解*
     - Influence **quality attributes**
     - **Reason about and manage changes**
@@ -103,7 +103,7 @@
     - **Foundation(Basci) for training** a new team
 
 --------
-####Chapter 3
+#### Chapter 3
 
 - 理解
     - Technical Context
@@ -128,7 +128,7 @@
     - Influence between Architecture and context
 
 --------------
-####Chapter 4
+#### Chapter 4
 - Sys requirements
     - Functional requirements - not determine Architecture
     - Quality attribute requirements
@@ -190,7 +190,7 @@
 - 理解：概念
 - 了解：公式和 一般场景
 - 掌握：战术Tatics以及设计清单Design for
-####Chapter 5
+#### Chapter 5
 - Availability 可用性 理解
     - A property of software that it is there and ready to carry out its task when you need it to be
     - = Reliability + Recovery (Repair)
@@ -253,7 +253,7 @@
             
 
 --------
-####Chapter 6
+#### Chapter 6
 - Interoperability
 - Definition
     - about the degreee to which two or more sys can usefully exchange meaningful information
@@ -281,7 +281,7 @@
     - Major data abstraction --consistent with--> data from interoperating sys.
     
 ---------
-####Chapter 7
+#### Chapter 7
 
 - Modifiability
     - is about change, and our interest in it centers on the cost and risk of making changes
@@ -309,7 +309,7 @@
         
 
 ------
-####Chapter 8
+#### Chapter 8
 
 - Performance
     - is about time and the software sys's ability to meet timing requirements
@@ -364,7 +364,7 @@
         - deploying additional resources on demand to meet increased loads
 
 ---------
-####Chapter 9
+#### Chapter 9
 
 - Security
     - is a measure of the sys's ability to protect data and information from unauthorized access while still access to people and sys that are authorized
@@ -411,7 +411,7 @@
         - verify checksums and hash values
 
 ------
-####Chapter 10
+#### Chapter 10
 
 - Testability
     - refers to the ease with which software can be made to demonstrate its faults through testing
@@ -450,7 +450,7 @@
     - Isolateability
 
 --------
-####Chapter 11
+#### Chapter 11
 
 - Usability 易用性
     - is concerned with how easy it is for the user to accomplish a desired task and the kind of user support the sys provides
@@ -483,7 +483,7 @@
         - recovering from user and sys errors
                             
 ----------
-####Chapter 12
+#### Chapter 12
 
 - Goal
     - 了解
@@ -523,7 +523,7 @@
     - Construct design checklists
                                 
 -------------
-####Chapter 13
+#### Chapter 13
 
 - Pattern
     - A context
@@ -538,12 +538,22 @@ Pattern Catalogue 掌握
 
 - Module Pattern
     - Layer Pattern
+        - Context: Separation of concerns
+        - Problem: The software needs to be segmented in such a way that the model can be **developed and evolved separately** with listtle interaction amoong the parts, supporting portability, modifiability, and reuse
+        - Solution: Divides the software into units called layers. Each layer is **a grouping of modules** that offers **a cohesive set of services**. The usage must be unidirectional
         - Overview: Defines **layers** and **a use relation**
         - Element: Layer
         - Relations: Allowed to use //allowed-to-use relations should not be circular
+        - Constraints:
+            - Every piece of software is allocated to exactly one layer
+            - At least two layers
+            - The allowed-to-use relations should not be circular(a lower layer cannot use a layer above)
     - OOP Pattern
 - Component&Connector Pattern
     - Broker Pattern
+        - Context: Distributed services interoperate with each other
+        - Problem: How do we **structure distributed software** so that service users do not need to know **the nature and location** of service providers, making it easy to **dynamically change the bindings** between users and providers?
+        - Solution: **Separates** users of services(**clients**) from providers of services(**servers**) by **inseting an intermediary**, called a broker
         - Overview: The **broker** mediates the communication between a number of **clients** and **servers**
         - Element: 
             - Client(a requester of services)
@@ -554,9 +564,16 @@ Pattern Catalogue 掌握
         - Constraints: C/S can only --attach to--> a broker
     - Weakness: communication bottleneck; up-front complexity; security attacks; difficult to test
     - MVC Pattern
+        - Context: separate view from model
+        - Problem: How can user interface functionality be kept separate from application functionality and yet still be responsive to user input, or to changes in the underlying application's data? And how can multiple views of the user intercace be created, maintained, and coordinated when the underlying application data changes?
+        - Solution: The MVC pattern separates application functionality into three kinds of components
         - Element: M, V, C
         - Relations: The notifies relation connects instances of model, view and controller, notifying elements of relevant state changes
+        - The model component should not interact directly with the view
     - Pipe and Filter Pattern
+        - Context: process data streams
+        - Problem: Such systems need to be divided into **reusable**, **loosely coupled components** with **simple, generic interaction mechanisms**
+        - Solution: The pattern of interaction in the pipe&filter pattern is characterized by successive transformations of streams of data
         - Overview: Data is transformed by filters connected by pipes
         - Element: Filter and Pipe
         - Relations: The attachment relation associates (**the output of filters**) with (**the input of pipes**) and vice versa
@@ -564,15 +581,28 @@ Pattern Catalogue 掌握
             - **filter output ports** --Pipe(connect)-- **filter input ports**
             - Connected filters must agree on the type of data being passed along the connecting pipe
     - Client-Server Pattern
+        - Context: There are shared resources and services that large number of distributed clients wish to access
+        - Problem: We want to improve scalability and availability by centralizing the control of these resources and services, while distributing the resources themselves across multiple physical servers
+        - Solution: Clients interact by requesting services of servers, which provide a set of services
         - Elements: C/S
         - Overview: Clients initiate interactions with servers, invoking services as needed from those servers and waiting for the results of those requests
         - Relations: The attachment relation associates clients with servers
         - Constraints: Clients are connected to servers through request/reply connectors
     - Peer-to-Peer Pattern
+        - Context: Distributed computational entities are considered equal
+        - Problem: How can a set of "equal" distributed computational entities be connected to each other via a common protocal so that they can organize and share their services with high availability and scalability?
+        - Solution: In the p2p pattern, components directly interact as peers. All peers are "equal" and no peer or group of peers can be critical for the health of the system
         - Overview: Computation is achieved by cooperating peers
         - Elements: Peer; Request/Reply connector
         - Relations: The relation associates peers with their connectors. Attachments may change at runtime
+        -  Constraints: Restrictions may be placed on the following:
+            - The number of allowable attachments to any given peer
+            - The number of hops used for searching for a peer
+            - which peer know about which other peers
+            - ...
     - SOA Pattern (Service Oriented Architecture)
+        - Context: A number of services interoperates without any detailed knowledge of their implementation
+        - Problem: How can we support interoperability of distributed components running on different platforms and written in different implementation languages, provided by different organizations, and distributed across the Internet?
         - Overview: Computation is achieved by a set of cooperating services over a network
         - Element:
             - Components: Service providers/consumers (p/c)
@@ -589,6 +619,9 @@ Pattern Catalogue 掌握
             - complex to build
             - performance overhead(middleware), performance bottlenecks, not performance guarantees
     - Publish-Subcribe Pattern
+        - Context: The precise **number** and **nature** of the data producers and consumers are not predetermined or fixed, nor is the data that they share
+        - Problem: How can we create integration mechanisms that support the ability to transmit messages among the producers and consumers so they are unaware of each other's identity, or potentially even their existence?
+        - Solution: In the publish-subscribe pattern, components interact via announced messages, or event
         - Overview: Components publish and subscribe to events. When an event is announced by a component, the connector infrastructure dispatches the event to all registered subscribers.
         - Element:
             - Publisher, Subscriber
@@ -597,6 +630,9 @@ Pattern Catalogue 掌握
             - The attachment relation associates components with the publish0subscribe connector by prescribing which components announce events and which components are registered to receive events
         - Constraints: Publish ports are attached to annouce roles and subscribe ports are attached to listen roles
     - Shared-Data Pattern
+        - Context: Various computational components need to share and manipulate **large amounts of data**(shared data)
+        - Problem: How can systems **store** and **manipulate** **persistent data** that is accessed by multiple independent components?
+        - Solution: In the shared-data pattern, interaction is dominated by the **exchange of persistent data** between **multiple data accessors** and at least one **shared-data store**
         - Overview:
             - Communication between data accessors is mediated by a shared data store
         - Element:
@@ -609,7 +645,27 @@ Pattern Catalogue 掌握
             - Data accessors interact only with the data store(s)
 - Allocation Pattern
     - Map-Reduce Pattern
+        - Context: need to quickly analyze enormous volumes of data
+        - Problem: To efficiently perform a **distributed** and **parallel sort** of a large data set and provide a simple means for the programmer to specify the analysis to be done
+        - Solution: The map-reduce pattern requires three parts:
+            - A specialized infrastructure takes care of allocating the data as needed
+            - A map which filters the data to retrieve items
+            - A reduce which combines the results of the map
+        - Overview: The map-reduce pattern provides a framework for analyzing a large distributed set of data. The map performs the extract and transform portions of the analysis and the reduce performs the loading of the results
+        - Elements:
+            - Map
+            - Reduce
+            - The infrastructure is the framework responsible for deploying map and reduce instances, shepherding the data between them, and detecting and recovering from failure
+        - Relations:
+            - Deploy on
+            - Instantiate, monitor, and control is the relation between the infrastructure and the instances of map and reduce
+        - Constraints:
+            - The data to be analyzed must exist as a set of files
+            - Map functions are stateless and do not communicate with each other
     - Multi-Tier Pattern
+        - Context: To distribute a system's infrastructure into distinct subsets
+        - Problem: How can we **split the system into** a number of computationally independent **execution structures**--groups of software and hardware--connected by some communications media?
+        - Solution: The execution structures of many systems are organized as a set of logical groupings of components. Each grouping is termed a tier
         - Overview:
             - The execution structures of sys are organized as a set of logical grouping of components
         - Element:
@@ -638,7 +694,7 @@ Pattern Catalogue 掌握
             - side effects: security, performance, modifiability...
         - "Increse Available Resources" -- address the performance side-effect
         - "Scheduling Policy" -- address the efficient use of resources
-        - "User an Intermediary" -- address the addition of the scheduler to the sys
+        - "User and Intermediary" -- address the addition of the scheduler to the sys
 
 
 
@@ -647,14 +703,14 @@ Dict
     SOAP (originally Simple Object Access Protocol) is a protocol specification for exchanging structured information in the implementation of web services in computer networks. Its purpose is to induce extensibility, neutrality and independence. It uses XML Information Set for its message format, and relies on application layer protocols, most often Hypertext Transfer Protocol (HTTP) or Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.
 
 -----------
-####Chapter 14
+#### Chapter 14
 - 了解
 
 
 -----------
-####Chapter 15
+#### Chapter 15
 -----------
-####Chapter 16
+#### Chapter 16
 理解
 - ASR -- Architecturally Significant Requirement
     - Architectures exist to build sys that satisfy req
@@ -735,7 +791,7 @@ Dict
 
 
 -----------
-####Chapter 17
+#### Chapter 17
 
 - Design Strategy 理解
     - Decomposition
@@ -793,13 +849,13 @@ In software development, a greenfield project could be one of developing **a sys
 ---------
 
 
-####Chapter 18
+#### Chapter 18
 
 - 理解：架构编档的重要性。架构文档的用途、读者。
 - 了解：如何选择视图进行编档。
 - 掌握：如何对视图进行编档。视图文档模版。架构文档摘要信息。如何对系统行为进行编档。如何对质量属性进行编档。
 
-####Architecture Documentation (AD)
+##### Architecture Documentation (AD)
 - Audientce (stakeholders such as)
     - new employees
     - developers
@@ -895,7 +951,7 @@ Examples
 - Performance view
 - ......
 
---
+-.-
 
 - Method for Choosing the Views
     - Build a stakeholder/view table
@@ -957,7 +1013,7 @@ Examples
                 
 -----------
 
-####Chapter 19
+#### Chapter 19
 
 - Architecture acts as a blueprint for implementation
 - Embedding the Design in the Code
@@ -1027,8 +1083,8 @@ Examples
 
 -----------
 
-####Chapter 20
-#####Architecture Reconstruction and Conformance
+#### Chapter 20
+##### Architecture Reconstruction and Conformance
 了解
 
 - Why Reconstruction
@@ -1113,7 +1169,7 @@ Detail
 
 ---------
 
-####Chapter 21
+#### Chapter 21
 
 Architecture Evaluation
 
@@ -1251,14 +1307,218 @@ Dict
 
 
 ----------
-####Macro
+#### Macro
 - Design for (A)
     - Adopt suitable architectural patterns and tactics
     - Establish an (A) model/formula
     - Design a dedicated (A) view if necessary
     - Determine which portion of the sys pertains to (A) and Ensure that......
-    
 
+--------
+#### Appendix
+
+##### Appendix 来自林连南的笑声
+
+    此为录音人肉翻译，有误免责声明，爱看不看
+    
+Chap3 架构 influencecycle;arhictecture influence what,
+
+what influnce architecture 简答或不怎么考
+
+Part2
+
+八个基本质量属性一个扩展质量属性，具体描述，场景的概念也要清楚
+
+由具体到抽象，区分战术，给你一个场景有哪种质量属性。
+
+战术大家要熟悉
+
+以下设计战术可以提高什么（心跳…。）
+
+以下什么战术可以提高安全性(C限制访问…）
+
+具体什么场景用什么战术
+
+车门下降到几秒，与什么质量相关（选择）
+
+注意考试考英文
+
+
+10-18
+为什么一直架构考试都是上课讲过的东西，为什么总是选择题那么低分
+就是有某个小障碍干扰
+
+简答题呢尤其是课程作业一定要做我布置了你们
+
+质量属性是有限的吗？那肯定是无限的啊！
+
+注意布置的作业。。万一考到
+
+简答题————（
+怎么捕获ASR
+ATM的步骤和输出
+什么是甜点，场景等基本概念）
+
+要么考作业，要么就是你一定会知道的（笑声）
+
+13
+Pattern 的分类，，三大类
+Pattern统一程序方法。 ，，，通过场景，问题和方案（方案分具体元素关系和限制），，，，简答题（描述某个pattern，通过前面这几点）
+面向对象在这书就是一种架构模式
+开始念名字，遍历三大类各自pattern
+其中SOA和Shared data就是和大作业有关的
+最基本就是分层模式
+课程大作业要高度重视，占了40%。。。。。。。
+
+18-28
+架构模式—从CPS, ERC这几点来理解，知道优缺点，在约束条件里边讨论， （这里涉及到一个问题）——怎么使用战术来加强 augment 
+课本例子 (Broker)，优缺点，，，（！！！强调了这个—》如何用某个战术来加强broker———》变化无常）
+以前的试卷可以看，但不能背答案，，，因为什么教学评估怎么怎么样，有查重率，不一样的考法（（以前考优缺点，现在可能变成考如何加强）
+
+怎么综合运用多种战术加强，，课本的那个例子
+
+15章
+有个什么甜点图，得看懂，280页的图，曾经考过问答题，选择题
+
+16
+效用树
+ADD缩写，步骤要知道
+一般选The whole system
+
+18
+课程大作业有关，但是考试关系不大
+
+Architecture view，概念级了解，Architecture Revolution
+
+考过 —— 将AV的概念搬上来，然后让选是 AV ，还是Architecture style之类
+
+——
+要了解什么是产品线，大概有什么用
+——
+云计算基本机制，考过service model
+CAP view?要了解，122，为什么三者不能兼得
+        
+-------
+
+##### Appendix 张平键版本
+
+Chapter 1. What is Software Architecture? 
+理解：软件体系结构（软件架构）的定义、架构模式的概念。
+掌握：软件系统有哪几类结构？在每类结构里，元素及其之间的关系是什么？每类结构各有哪些常见的结构？其特点是什么？
+了解：结构与视图是什么关系？好的结构的一些经验法则。
+
+Chapter 2. Why is Software Architecture Important?
+理解：13个理由。
+
+Chapter 3. The Many Contexts of Software Architecture
+理解：技术环境、项目生命周期、商业环境、架构师职业环境中的软件体系结构。架构与环境的相互影响。
+了解：涉众。
+
+Chapter 4. Understanding Quality Attributes
+了解：系统的功能需求。功能需求与系统架构的关系。功能需求与质量需求的关系。系统约束。
+理解：系统的质量需求。战术的概念。
+掌握：质量属性场景的概念和举例。质量设计的7种决策。
+
+Chapter 5. Availability
+理解：可用性概念。
+了解：可用性公式。可用性一般场景。
+掌握：可用性战术。可用性设计清单。
+
+Chapter 6. Interoperability
+理解：互操作性概念。
+了解：互操作性一般场景。
+掌握：互操作性战术。互操作性设计清单。
+
+Chapter 7. Modifiability
+理解：可修改性概念。
+了解：可修改性一般场景。
+掌握：可修改性战术。可修改性设计清单。
+
+Chapter 8. Performance
+理解：性能概念。
+了解：性能公式。性能一般场景。
+掌握：性能战术。性能设计清单。
+
+Chapter 9. Security
+理解：安全性概念。
+了解：安全一般场景。
+掌握：安全性战术。安全性设计清单。
+
+Chapter 10. Testability
+理解：可测试性概念。
+了解：可测试性一般场景。
+掌握：可测试性战术。可测试性设计清单。
+
+Chapter 11. Usability
+理解：易用性概念。
+了解：易用性一般场景。
+掌握：易用性战术。易用性设计清单。
+ 
+Chapter 12. Other Quality Attributes
+了解：其它软件质量属性如可变性、可移植性、开发可分布性、伸缩性、可部署性、移动性、可监控性、生命财产安全性。其它类别的质量属性如架构质量属性、商业属性、系统质量属性。ISO/IEC FCD 25010 产品质量标准。
+理解：如何处理未知的质量属性。
+
+Chapter 13. Patterns and Tactics
+了解：架构模式（架构风格）的概念。
+掌握：层次模式、代理模式、MVC模式、管道-过滤器模式、CS模式、P2P模式、SOA模式、发布订阅模式、共享数据模式、Map-Reduce模式、多级模式。
+理解：模式与战术的关系。
+
+Chapter 14. Quality Attribute Modeling and Analysis
+了解：模型。常见质量属性模型的成熟度。
+了解：思想实验。粗略分析。原型。模拟仿真。实验。
+
+Chapter 15. Architectures in Agile Projects
+了解：敏捷开发思想与准则。
+理解：敏捷开发的甜蜜点。
+了解：敏捷开发与架构编档。敏捷开发与架构演化。
+
+Chapter 16. Architecture and Requirements
+理解：ASR。ASR的几种获取方法。QAW。
+了解：商业目标场景。
+理解：PALM方法。
+掌握：效用树。
+
+Chapter 17. Designing an Architecture
+理解：Generate and Test（架构设计的假设检验法）。初始化、迭代、终结。
+掌握：ADD方法。
+
+
+Chapter 18. Documenting Software Architectures
+理解：架构编档的重要性。架构文档的用途、读者。
+了解：如何选择视图进行编档。
+掌握：如何对视图进行编档。视图文档模版。架构文档摘要信息。如何对系统行为进行编档。如何对质量属性进行编档。
+
+Chapter 19. Architecture, Implementation, and Testing
+理解：实现与架构的一致性。
+掌握：将架构嵌入代码。框架方法。代码模版方法。防止架构侵蚀。
+了解：架构师在测试中的角色。
+
+Chapter 20. Architecture Reconstruction and Conformance
+了解：架构重构的背景和目的。
+理解：架构重构的阶段。每个阶段的方法。
+
+Chapter 21. Architecture Evaluation
+了解：架构评审的3种形式及其特点。轻量级架构评审。
+掌握：ATAM方法：目的、参与人员、步骤、采用的方法、结论。
+
+Chapter 26. Architectures for the Cloud
+了解：云计算的特点、主要机制、技术。
+掌握：云计算下的质量属性。
+
+考题类型
+选择题（30%）
+概念的理解
+简答题（30%）
+架构方法的掌握
+分析设计题（40%）
+针对具体问题，给出质量属性场景、所用战术、架构模式
+
+
+
+
+
+
+-------
 
   [1]: http://static.zybuluo.com/jyyzzj/carog13fiow8mhwt83ko4kzs/image_1c28e214p13k7hud3qcrj9aqj9.png
   [2]: http://static.zybuluo.com/jyyzzj/f8x0u0op099r5dyyxq5uk1gq/image_1c28g0bn610i1lf0rebc3v1bm713.png

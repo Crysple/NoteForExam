@@ -6,10 +6,10 @@
 
 ---
 
-##Summary
+## Summary
 
 ---------------
-####Chapter 1
+#### Chapter 1
 - SA (Software Architecture)
     - The SA of (a program or computing system)  理解
         - **structure or structures** of the system (*comprises*)
@@ -103,7 +103,7 @@
     - **Foundation(Basci) for training** a new team
 
 --------
-####Chapter 3
+#### Chapter 3
 
 - 理解
     - Technical Context

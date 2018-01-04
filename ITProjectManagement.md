@@ -340,6 +340,15 @@
         - 配置管理(configuration management) 确保了项目管理产品的描述是正确而且完备的
         - 变更沟通程序
 
+
+变更流程
+（1）变更申请。应记录变更的提出人，日期，申请变更的内容等信息。
+（2）变更评估。对变更的影响范围，严重程度，经济和技术可行性进行系统分析。
+（3）变更决策。由具有相应权限的人员或机构决定是否实施变更。
+（4）变更实施。由管理者指定的工作人员在受控状态下实施变更。
+（5）变更验证。有配置管理人员或受到变更影响的人对变更结果进行评价确定变更结果和预期是否相符，相关内容是否进行了更新，工作产物是否符合版本管理的要求
+（6）沟通存档。将变更后的内容通知可能会受到影响的人员，并将变更记录汇总归档。如提出的变更在决策时被否决，其初始记录也应予以保存。
+
 - 大变更
     - 建立变更控制系统，包括简历变更控制委员会
     - 项目经理和其队员一定要创建一个系统，使每一位受到变更影响的人都能够及时得到信息
@@ -370,7 +379,7 @@
     - Include **all the activities** related to **satisfy the relevant quality standards** for a project
     - Another goal is **continuous quality improvement**
     - Benchmarking generates ideas for quality improvements by comparing (**specific project practices**) or (**product characteristics**) to those of other projects or products within or outside the performing organization
-    - A quality audidt is structured review of specific quality management activities that identify lessons learned that could improve performance on current or future projects
+    - **A quality audidt is structured review of specific quality management activities** that identify lessons learned that could improve performance on current or future projects
 
 质量管理的类型（三种质量管理形式）
 
@@ -405,6 +414,8 @@
 
 #### Chapter 5 Project Scope Management
 
+范围是指包括生产项目产品及用于生产产品的过程的所有工作
+
 - Project Scope Management Processes
     - Collecting requirements
         - Defining and documenting the features and functions of the products produced during the project as well as the processes used for creating them
@@ -416,16 +427,49 @@
         - Formalizing acceptance of the project deliverables
     - Controlling scope
         - controlling changes to project scope throughout the life of the project
+- 范围定义 scope definition
+    - 就是进一步定义所需开展的工作
+    - 输出：
+        - 项目范围说明书和项目文件更新
+- 范围核实 scope verification
+    - 是由stakeholders对已界定的项目范围进行的正式确认。这一确认通常由客户检查完成，然后由关键利益相关者来收尾。
+- 范围控制 scope control
+    - 是指控制项目范围的变更。——用户通常不明确他们想要的系统界面看起来是什么样子或者需要什么功能。。。
+    - 范围控制的目的就是对那些引起范围变化的因素施加影响，确保变更能依据继承变更控制建立的程序有序地进行，并管理已发生的变更
+    - 输入：
+        - 项目管理计划、工作绩效信息、需求文件、需求跟踪矩阵和组织过程资产。
+    - 主要工具：实施偏差分析
+        - 偏差（variance)是指计划与实际绩效的差异
+    - 输出：
+        - 工作绩效测量结果、组织过程资产更新、变更请求、项目管理计划更新以及项目文件更新
+
+
+
 
 -.-
 
     A work package is a task at the lowest level of the WBS
    
    
+   
+- WBS是以可交付成果为中心，将项目中所涉及的工作进行分解，定义出项目的整体范围
+- 注意层级从1开始数，一般第一层是整个项目，比如课本的内联网项目，第二层才是概念、网站设计、网站开发等等
+- 制作方法
+    - 使用指南
+    - 类比法
+    - 自上而下法
+    - 自下而上法
+    - 心智图法 —— 通过从一种核心理念发散出来，将思想和想法结构化。
+
+
+
 - Dictionary -- with WBS -- for the reason that the WBS is very concise
 - Function: depict the detailed information about the WBS
 
-   
+
+
+    
+
    
 - Miscellaneous
     - **专家评审**可以用于所有其他的项目集成管理过程中
@@ -442,6 +486,7 @@
     - Developing the schedule进度开发
     - Controlling the schedule控制计划
 
+![image_1c2tsftg7m5ca5114si19imqvq9.png-85.4kB][5]
 
 - 定义活动：里程碑（标注）（不需要估算工期）
     - A milestone is a significant event that normally has no duration
@@ -480,9 +525,41 @@
         - 不耽误整个项目的计划完成时间的前提下，一项活动从它最早开始算起可以推迟的时间 -- LF-ES?
     - Free slack or free float(自由时差）
         - 不耽误其任何紧后活动最早开始的前提下，一项活动能够推迟进行的时间
-            
+
+- 资源分解结构(resource breakdown structure RBS)
+    - 是一种根据类别和类型来识别项目资源的层次结构。
+    - 例如资源类别中可能包括分析师、程序员和检验员
 - 制定项目计划的内容（很重要） 6.5的内容
+    - 工期（duration）
+        - 等于开展活动的实际时间+占用时间
+        - 例如尽管可能只花一周就能完成一项实际的工作，但估计的工期可能是两周，目的是根据外部信息留出一些额外的时间进行调整。
+        - 分配的资源也会影响工期估计
+    - 人工量（effort）
+        - 是指完成一项任务所需（多少个单位）的工作天数和工作小时。
 - 七个图的内容（必考答题）计算答题， eg. IPMP认证考试
+
+- Terminology
+    - AOA (Activity-on-arrow)双代号网络图法或箭线图法(arrow diagramming method, ADM)——一种网络图技术，**箭线代表活动**，节点用来连接活动
+    - PDM (Precedence diagramming method)是一种用方框表示活动的网络图技术。——就是MS project生成的那种
+    - Dummy activities
+        -是指没有工期和资源需求的活动，有时偶尔在双代号网络图中，用来辅助表示活动间的逻辑关系 
+    - SMART标准
+        - 按照该标准，里程碑应该
+            - Specific 具体
+            - Measurable 可测量
+            - Assignable 可分配
+            - Realistic 符合实际
+            - Time-framed 有时间限制
+    - 甘特图：一种用于显示项目进度信息的常见工具
+        - 黑色钻石：里程碑；白钻石为延误的里程碑
+        - 两端带箭头的黑色粗线：总结性任务
+        - 浅灰色的水平线条代表了每项任务的工期
+        - 连接这些符号的箭线代表任务间关系
+    - 追踪甘特图 ： 显示项目世纪进度信息的特殊甘特图，用于评估项目进度（比较了原计划项目进度信息和实际项目进度信息）
+    - 关键路径分析：一种用于设定和控制项目进度的重要工具
+    - 关键链进度安排法：当编制项目进度表时，这种技术主要考虑如何使用有限的资源
+    - 计划评审技术（PERT）分析：一种评估项目中进度风险的工具
+
 
 
 ---
@@ -496,6 +573,8 @@
         - Allocating the overall cost estimate to individual work items to establish a baseline for measuring performace 涉及将总体成本分配给各个工作包
     - Controlling costs
         - Contolling changes to the project budget 涉及对项目预算变更的控制
+
+![image_1c2tuel2f1bj3inb18nk1kbj1p5bm.png-57kB][6]
 
 
 - 质量成本(cost of quality) = 一致成本 conformance + 不一致成本 nonconformance
@@ -546,10 +625,16 @@ EVM (Earned Value Management)
     - Estimated Time to Complete = Original Time Estimate/SPI 完成估计时间=开始时间估计／SPI
     
 
-
+- Terminology
+    - Learning curve theory 当重复生产物品时，在一个固定模式下，单位成本随生产数量的增多而下降
+    - Reserve储备
+        - 应急储备 contingency 考虑可以部分预测到的未来情况 known unknowns，比如组织知道信息技术人员有20%人员更替，则为信息技术人员支付雇佣和培训成本
+        - 管理储备 management 考虑不确定的未来情况，unknown unknowns,比如一个项目经理病了或者失去一个重要的供应商
     
 ---
 #### Chapter 8 Project Quality Management
+
+目的是为确保项目满足承诺的需求
 
 - Three Process
     - 质量规划 quality planning
@@ -562,12 +647,12 @@ EVM (Earned Value Management)
 - 控制图 control chart
     - 实时展示项目进展信息的图表
     - **七点运行定律**（seven run rule），如果在一个质量控制图中，一行上的7个数据点都低于平均值或者高于平均值，或者都是上升的或者都是下降的，那么这个过程就需要因为非随机原因而接受检查
-    ![image_1c2oapllb1sse1tgg192ftt4rdc9.png-71.7kB][5]
+    ![image_1c2oapllb1sse1tgg192ftt4rdc9.png-71.7kB][7]
 
 - 运行图 run chart
     - 是一个展现一个过程在一段时间的历史和变化情况的模型，是一个按发生顺序画出数据点的线性图标
     - Example:将三种不同类型的缺陷按照每月的缺陷数来绘制成图
-    ![image_1c2ocll011ohqpoq1rem65v7c1m.png-70kB][6]
+    ![image_1c2ocll011ohqpoq1rem65v7c1m.png-70kB][8]
 
 - 散点图 scatter diagram
     - 用于显示两个变量之间是否有关系
@@ -579,7 +664,7 @@ EVM (Earned Value Management)
     - Pareto analysis 帕累托分析  80-20定律 
         - 意思时说80%的问题通常是由20%的原因造成的
     - Example 第一个问题的抱怨占总抱怨量的55%，那么第一个第二个问题的抱怨累加起来占到80%，意思是这两个领占抱怨量的80%
-    - ![image_1c2od56157827aqg57uel1aae13.png-87kB][7]
+    - ![image_1c2od56157827aqg57uel1aae13.png-87kB][9]
 
 
 Software Test
@@ -619,13 +704,28 @@ Software Test
     - 社会认可
     - 尊严自我实现
 
+资源平衡(resourceleve1ing)是通过推迟任务来化解资源冲突的一种方法
 
 ---
 #### Chapter 10 Project Communications Management
 
+计划（确定及准备信息）发布、绩效报告，SH管理
 
+- communications planning
+    - 包括确定项目利益相关者所需的信息和沟通需要:谁需要什么信息，什么时候需要，信息如何传递给他们等
+- information distribution
+    - 包括使项目利益相关者能通过适当的方式获得所需的信息
+- performance reporting
+- managing stakeholders
+
+计算沟通渠道数量：
+- communications channels = $\frac{n*(n-1)}{2}$
+
+A status report describes where the project stands at a specific point in time
 
 ---
+
+
 #### Chapter 11 Project Risk Management
 项目风险管理
 
@@ -635,7 +735,17 @@ Software Test
 - Risk-seeking风险偏好
 - Risk-neutral风险中立
 
-![image_1c2ogj0sd14le1npk13ovv981nkf1g.png-39.9kB][8]
+![image_1c2ogj0sd14le1npk13ovv981nkf1g.png-39.9kB][10]
+
+
+contingency plans <----> fallback plans
+例如，一个大学毕业生会有一个毕业后将在哪儿生活的主计划和几个应急计划，但是如果这些计划都无法奏效的话，就会有个退路计划:先在家住一段时间。有时，应急计划和退路计划这两个词可以互换使用。
+
+
+德尔菲法/得尔飞法(Delphi Method)
+德尔菲法依据系统的程序，采用匿名发表意见的方式，即专家之间不得互相讨论，不发生横向联系，只能与调查人员发生关系，通过多轮次调查专家对问卷所提问题的看法，经过反复征询、归纳、修改，最后汇总成专家基本一致的看法，作为预测的结果。这种方法具有广泛的代表性，较为可靠。
+
+风险登记单(risk register) 就是一份文档，包含了各种风险管理过程的输出，通常以表格或电子数据表格的形式出现。它是一种把潜在风险事件和相关信息文档化的工具。
 
 
 ##### EMV 必考
@@ -645,7 +755,23 @@ Software Test
 EMV = 概率(P) X 产出
 
 
+![image_1c2u2m1ia1trndhp9kj1l0k1qd12d.png-86.8kB][11]
 
+- SOW statement of work 工作说明：是对采购所需工作的描述
+- 采购文件
+    - 需求建议书或建议请求书（RFP，request for proposal）是一份用来请求未来供应商提交提案的文件
+    - 报价请求书（RFQ，request for quote）是请求期望的供应商报价（投标bid）的文件
+
+oursourcing(外包)
+
+-- 管理合同或者合同管理，是保证供应商的执行结果满足合同的要求
+
+
+- Cost-reimbursable contracts
+    - cost plus incentive fee contract, CPIF contract 节省的成本费用按照比例分层
+    - cost plus fixed fee contract, CPFF contract，除了执行成本，还要支付一个根据估算成本百分比得到的固定费用
+    - cost plus award fee contract, CPAF contract（卖方满足了客观执行标准的基础）—— 比如饭店给小费，但仍需为食物付费
+    - cost plus percentage of costs contract, CPPC contract 除了支付执行成本外还支付按总成本一定比例的费用。这时买方承当了所有风险，反而激励了供应商增加成本。为美联邦政府所禁止
 
 
 ---
@@ -655,7 +781,10 @@ EMV = 概率(P) X 产出
   [2]: http://static.zybuluo.com/jyyzzj/unk456syr9i2ku7yas08eyef/image_1c2t40u261kde1oo910vq15if16le20.png
   [3]: http://static.zybuluo.com/jyyzzj/usjjnpcj26onsddrcpycff1z/image_1c2stt53k6irk4f1flh1cl55as16.png
   [4]: http://static.zybuluo.com/jyyzzj/n9ocygpq63yrlruh6fekadoj/image_1c2sueoq61d4llqo1ibt81a1iv81j.png
-  [5]: http://static.zybuluo.com/jyyzzj/xi9g9icp29ynjojfai85cfh2/image_1c2oapllb1sse1tgg192ftt4rdc9.png
-  [6]: http://static.zybuluo.com/jyyzzj/7xe7b1r9wuc566hrucjf29g9/image_1c2ocll011ohqpoq1rem65v7c1m.png
-  [7]: http://static.zybuluo.com/jyyzzj/hkxcfywgutezjczt9sqqa8a5/image_1c2od56157827aqg57uel1aae13.png
-  [8]: http://static.zybuluo.com/jyyzzj/y7z63xflqx9ffu0dtevbsnoy/image_1c2ogj0sd14le1npk13ovv981nkf1g.png
+  [5]: http://static.zybuluo.com/jyyzzj/8aumb8irxkj46khaqvj3ge1w/image_1c2tsftg7m5ca5114si19imqvq9.png
+  [6]: http://static.zybuluo.com/jyyzzj/n0l96w7f47sxyq8g2feouvdo/image_1c2tuel2f1bj3inb18nk1kbj1p5bm.png
+  [7]: http://static.zybuluo.com/jyyzzj/xi9g9icp29ynjojfai85cfh2/image_1c2oapllb1sse1tgg192ftt4rdc9.png
+  [8]: http://static.zybuluo.com/jyyzzj/7xe7b1r9wuc566hrucjf29g9/image_1c2ocll011ohqpoq1rem65v7c1m.png
+  [9]: http://static.zybuluo.com/jyyzzj/hkxcfywgutezjczt9sqqa8a5/image_1c2od56157827aqg57uel1aae13.png
+  [10]: http://static.zybuluo.com/jyyzzj/y7z63xflqx9ffu0dtevbsnoy/image_1c2ogj0sd14le1npk13ovv981nkf1g.png
+  [11]: http://static.zybuluo.com/jyyzzj/21q9yeaw2c5vxxg00ogd8ke2/image_1c2u2m1ia1trndhp9kj1l0k1qd12d.png

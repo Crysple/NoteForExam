@@ -8,4 +8,4 @@ Miscellaneous notes I did for the final exam
   
   ![image_1c46ofot41p201bar17f419gn1kqi1p.png-31kB][1]
   
-  [1]: http://static.zybuluo.com/jyyzzj/mc2f4ty21a7ouujx7ab21r47/image_1c46ofot41p201bar17f419gn1kqi1p.png
+  [1]: http://static.zybuluo.com/jyyzzj/7b4yvol8v6u43w6efhbkaev9/image_1c46okjv91ak91un91url15dq1fc826.png

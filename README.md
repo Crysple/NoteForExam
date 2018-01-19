@@ -1,8 +1,13 @@
 # NoteForExam
-Miscellaneous notes I did for the final exam
 
 
-> - 19 January, 2018 now. It somewhat proves that if you work hard, you will always be awarded.
+Miscellaneous notes I did for the final exam -- 28 December, 2017
+
+------
+
+
+19 January, 2018 now
+> -  It somewhat proves that if you work hard, you will always be awarded.
 > - The followings are my scores of these two course.
 > - So, if you want to get a good grade, do not hesitate.
 > - **Just do it!**
